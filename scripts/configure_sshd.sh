@@ -3,9 +3,6 @@
 # Configures SSHD to an alternate port
 # and disables password authentication
 ###############################################################################
-
-SSH_PORT="22760"
-
 . util.sh
 
 checkroot
@@ -32,3 +29,4 @@ sed -r -i -e "s/^\s\*Port\s+[0-9]+/Port ${SSH_PORT}/g" \
     exit 4
 }
 
+service ssh restart

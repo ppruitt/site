@@ -1,4 +1,5 @@
 # Utility functions
+. config.sh
 
 # Display message with timestamp
 log()
