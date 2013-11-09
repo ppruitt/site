@@ -58,6 +58,11 @@ if [ ! -d ${EASY_RSA_DIR} ] ; then
        exit 6
    }   
 
+   chmod 700 ${EASY_RSA_DIR} || 
+   { 
+       log "Failed to fix perms on ${EASY_RSA_DIR}"; exit 6; 
+   }
+
    install -v --backup -g root -o root -m 0600 -p -t ${EASY_RSA_DIR} ${VARS_SRC} ||
    {
        log "Failed to install vars file."

@@ -11,6 +11,9 @@ OPENVPN_DEST_DIR=/etc/openvpn
 
 # Location of our easy-rsa installation
 EASY_RSA_DIR="${OPENVPN_DEST_DIR}/easy-rsa"
+EASY_RSA_KEY_DIR="${EASY_RSA_DIR}/keys"
 
 # Source location of easy-rsa (docs recommend making our own copy)
 EASY_RSA_SRC_DIR="/usr/share/doc/openvpn/examples/easy-rsa/2.0"
+
+TEMP=/tmp
