@@ -7,11 +7,12 @@ PACKAGES="emacs24-nox \
          nginx-full \
          tmux \
          openvpn \
-         python-pillow \
+         python-dev \
          python-virtualenv \
          python-pip \
          postgresql \
-         python-psycopg2"
+         libpg-dev"         
+
 
 . util.sh
 
