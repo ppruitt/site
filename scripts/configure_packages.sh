@@ -11,7 +11,7 @@ PACKAGES="emacs24-nox \
          python-virtualenv \
          python-pip \
          postgresql \
-         libpg-dev"         
+         libpq-dev"         
 
 
 . util.sh
