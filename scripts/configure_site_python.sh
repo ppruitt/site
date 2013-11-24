@@ -18,10 +18,10 @@ virtualenv ${SITE_DIR} ||
 log "Activating ${SITE_DIR}."
 . ${SITE_DIR}/bin/activate
 
-log "Installing mezzanine."
-pip install mezzanine ||
+log "Installing django-cms."
+pip install django-cms ||
 {
-    log "Failed to install mezzanine."
+    log "Failed to install django-cms."
     exit 3
 }
 
