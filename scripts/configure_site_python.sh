@@ -2,6 +2,8 @@
 
 . ./util.sh
 
+PACKAGE_LIST="django-cms django-reversion<1.8 gunicorn psycopg2"
+
 SITE_DIR="${1}"
 if [ -z "${SITE_DIR}" ] ; then
     log "usage: ${0} site_virtualenv_dir"
@@ -18,24 +20,11 @@ virtualenv ${SITE_DIR} ||
 log "Activating ${SITE_DIR}."
 . ${SITE_DIR}/bin/activate
 
-log "Installing django-cms."
-pip install django-cms ||
+log "Installing packages: ${PACKAGE_LIST}"
+pip install ${PACKAGE_LIST} ||
 {
-    log "Failed to install django-cms."
+    log "Failed to install site packages."
     exit 3
 }
 
-log "Installing gunicorn."
-pip install gunicorn ||
-{
-    log "Failed to install gunicorn."
-    exit 4
-}
-
-log "Installing pyscopg2."
-pip install psycopg2 ||
-{
-    log "Failed to install psycopg2."
-    exit 5
-}
 
