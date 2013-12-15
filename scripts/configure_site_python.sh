@@ -2,7 +2,7 @@
 
 . ./util.sh
 
-PACKAGE_LIST="django-cms django-reversion<1.8 gunicorn psycopg2"
+PACKAGE_LIST="django gunicorn psycopg2 markdown pygments south"
 
 SITE_DIR="${1}"
 if [ -z "${SITE_DIR}" ] ; then
