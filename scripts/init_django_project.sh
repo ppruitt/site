@@ -9,6 +9,8 @@ usage()
 projname="${1}"
 destdir="${2}"
 
+[[ $# -eq 2 ]] || { usage; exit 1; }
+
 [ -z "${projname}" ] && { echo "No project name given"; usage; exit 2; }
 
 [ -z "${VIRTUAL_ENV}" ] && { echo "You're not in a virtual env." ; exit 1; }
