@@ -19,7 +19,7 @@ cp /etc/ssh/sshd_config /etc/ssh/sshd_config.orig ||
 # Move SSH port to make it the slightest bit more difficult for the bots
 log "Fixing sshd_config to move port, turn off password authentication"
 
-sed -r -i -e "s/^\s\*Port\s+[0-9]+/Port ${SSH_PORT}/g" \
+sed -r -i -e "s/^\s*Port\s+[0-9]+/Port ${SSH_PORT}/g" \
           -e 's/^(\s*#?)(\s*PasswordAuthentication\s+[Yy][eE][sS])/#\2\nPasswordAuthentication no/g' \
           -e 's/^(\s*#?)(\s*RSAAuthentication\s+[Nn][oO])/#\2\nRSAAuthentication yes/g' \
           -e 's/^(\s*#?)(\s*PubkeyAuthentication\s+[Nn][oO])/#\2\nPubkeyAuthentication yes/g' \
