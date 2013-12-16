@@ -1,13 +1,22 @@
-
 {% extends 'base.html' %}
+{% load markup %]
 
+{% block title %}Paul's Notes{% endblock %}
 {% block content %}
 {% if latest_articles %}
-    <ul>
-    {% for article in latest_articles %}
-        <li><a href="{% url 'detail' article.id %}">{{ article.title }}</a></li>
-    {% endfor %}
-    </ul>
+  {% for article in latest_articles %}    
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading">
+	<a href="{% url 'detail' article.id %}">{{ article.title }}</a>
+	<div class="pull-right">{{ article.publish_date | date:"d-M-Y" }}</div>
+      </div>
+      <div class="panel-body">
+           <p>{{ article.content }}</p>
+	   <a class="btn btn-default btn-sm" href="{% url 'detail' article.id %}" role="button">Continue Reading...</a> 
+      </div>
+    </div>
+  {% endfor %}
 {% else %}
     <p>No articles are available.</p>
 {% endif %}
