@@ -1,7 +1,7 @@
 from django.views import generic
 from models import Article
 
-class IndexView(generic.ListView):
+class ArticleIndexView(generic.ListView):
     template_name = 'pblog/index.html'
     context_object_name = 'latest_articles'
 
@@ -9,6 +9,6 @@ class IndexView(generic.ListView):
         """Return the last five published articles."""
         return Article.objects.order_by('-publish_date')[:5]
  
-class DetailView(generic.DetailView):
+class ArticleDetailView(generic.DetailView):
     model = Article
     template_name = 'pblog/detail.html'

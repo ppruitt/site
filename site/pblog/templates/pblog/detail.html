@@ -1,4 +1,10 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
 <h1>{{ object.title }}</h1>
 <h2>{{ object.author.name }}, {{ object.publish_date }}</h2>
 
 {{ object.content }}
+{% endblock %}
+
