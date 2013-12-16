@@ -2,7 +2,7 @@
 
 . ./util.sh
 
-PACKAGE_LIST="django gunicorn psycopg2 markdown pygments south"
+PACKAGE_LIST="django gunicorn psycopg2 markdown pygments south django-taggit"
 
 SITE_DIR="${1}"
 if [ -z "${SITE_DIR}" ] ; then
