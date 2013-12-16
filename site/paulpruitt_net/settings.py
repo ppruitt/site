@@ -82,3 +82,6 @@ USE_TZ = True
 
 STATIC_URL  = '/static/'
 STATIC_ROOT = '/srv/www/site/static'
+
+# Do not allow IFrames
+X_FRAME_OPTIONS = 'DENY'
